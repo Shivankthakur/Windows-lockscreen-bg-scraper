@@ -1,2 +1,2 @@
 # Windows-lockscreen-bg-scraper
-Saves Windows Lockscreen background images
+Saves Windows Lockscreen Spotlight images to custom directory
