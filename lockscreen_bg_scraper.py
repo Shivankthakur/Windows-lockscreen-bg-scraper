@@ -5,16 +5,14 @@ import os
 import time
 import shutil
 
-#Determine Source Directory - lockscreen pics assets directory
-while(True):
-    username = input("Enter system username: ")
-
-    src_dir = r"C:\Users" + '\\' + username + r"\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"
-    if(os.path.isdir(src_dir)):
-        print("Source directory path:", src_dir)
-        break
-    else:
-        print("Directory does not exist! Please enter valid username")
+#Determine Source Directory - lockscreen pics directory
+#path format: "%userprofile%\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets"
+src_dir = os.path.join(r"C:\Users",os.getlogin(),r"AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets")
+if(os.path.isdir(src_dir)):
+    print("Source directory path:", src_dir)
+else:
+    print("Directory does not exist!")
+    exit(-1)
 
 #Read destination directory - where u want to pictures to be stored
 while(True):
